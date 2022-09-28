@@ -401,7 +401,7 @@ header.scrolled .logo {
 }
 
 .showcase-area {
-    padding: 120px 0;
+    padding: 100px 0;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -433,8 +433,8 @@ header.scrolled .logo {
     min-height: calc(100% + 120px);
     /*120px is the height of the navbar and 100% is the height of the showcase image */
     background-image: linear-gradient( 45deg, rgb(186, 186, 253) 0%, hsl(242deg 61% 76%) 11%, hsl(243deg 48% 65%) 22%, hsl(245deg 39% 56%) 33%, hsl(246deg 38% 47%) 44%, hsl(248deg 45% 39%) 56%, rgb(52, 38, 120) 67%, hsl(251deg 62% 24%) 78%, hsl(253deg 72% 18%) 89%, hsl(254deg 83% 12%) 100%);
-    margin-top: 108px;
-    border-radius: 0 0 80px 80px;
+    /* margin-top: 108px; */
+    border-radius: 80px 100px 80px 200px;
 }
 
 .showcase-image .person {
@@ -611,7 +611,14 @@ header.scrolled .logo {
     align-items: center;
 }
 
-.canvas {
+
+/* .canvas1 {
+    width: 1000px;
+    margin: 0;
+    overflow: hidden;
+} */
+
+.first-one {
     width: 100%;
     margin: 0;
     overflow: hidden;
@@ -735,58 +742,58 @@ header.scrolled .logo {
 
 /* .body1,
 .html1 {
-background-color: #000;
-width: 100%;
-min-height: 100%;
-padding: 0;
-margin: 0;
-}
+    background-color: #000;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+} */
 
 .scroll-downs {
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-margin: auto;
-width: 34px;
-height: 55px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 34px;
+    height: 55px;
 }
 
 .mousey {
-width: 3px;
-padding: 10px 15px;
-height: 35px;
-border: 2px solid rgb(74, 72, 72);
-border-radius: 25px;
-opacity: 0.75;
-box-sizing: content-box;
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid rgb(74, 72, 72);
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
 }
 
 .scroller {
-width: 3px;
-height: 10px;
-border-radius: 25%;
-background-color: rgb(78, 76, 76);
-animation-name: scroll;
-animation-duration: 2.2s;
-animation-timing-function: cubic-bezier(.15, .41, .69, .94);
-animation-iteration-count: infinite;
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: rgb(78, 76, 76);
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+    animation-iteration-count: infinite;
 }
 
 @keyframes scroll {
-0% {
-    opacity: 0;
+    0% {
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
 }
-10% {
-    transform: translateY(0);
-    opacity: 1;
-}
-100% {
-    transform: translateY(15px);
-    opacity: 0;
-}
-} */
 
 
 /*------------- Services Section Styling------*/
@@ -1192,4 +1199,254 @@ button:hover .button-text {
     transform: translate(-50%, -50%);
     opacity: 1;
     transition: 0.45s 0.1s;
+}
+
+
+/* ----- Testimonials Section Styling------ */
+
+.testimonials {
+    padding: var(--section-padding) 0 calc(var(--section-padding) + 120px);
+}
+
+.testimonials .container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+}
+
+.swiper {
+    width: 100%;
+    background-color: var(--bg--color-2);
+    border-radius: 15px;
+    padding: 4rem 0 2.5rem;
+}
+
+.swiper-slide {
+    padding: 0 2.5rem;
+}
+
+.swiper-slide .text {
+    display: block;
+    margin: 1.5rem 0 0;
+}
+
+.swiper-pagination {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 11px;
+    margin-top: 3rem;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--main-color-1);
+    opacity: 0.3;
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 11px;
+    height: 11px;
+}
+
+.testimonials-title {
+    padding-left: 5rem;
+}
+
+.testimonials-title>* {
+    color: #fff;
+}
+
+.section-background {
+    position: absolute;
+    width: 100vw;
+    max-width: 75rem;
+    top: 15px;
+    left: 50%;
+    transform: translateX(calc(-50% + 120px));
+    height: calc(100% + 120px);
+    background: rgb(223, 225, 235);
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-image: linear-gradient( 45deg, rgb(186, 186, 253) 0%, hsl(242deg 61% 76%) 11%, hsl(243deg 48% 65%) 22%, hsl(245deg 39% 56%) 33%, hsl(246deg 38% 47%) 44%, hsl(248deg 45% 39%) 56%, rgb(52, 38, 120) 67%, hsl(251deg 62% 24%) 78%, hsl(253deg 72% 18%) 89%, hsl(254deg 83% 12%) 100%);
+    z-index: -1;
+}
+
+.section-background .person {
+    position: absolute;
+    height: 200px;
+    bottom: 28px;
+    right: 891px;
+    top: 420px;
+}
+
+.person-second {
+    position: absolute;
+    height: 700px;
+    bottom: 0;
+    right: 0;
+    top: 80px;
+}
+
+.section-background .circle {
+    position: absolute;
+    width: 170px;
+    left: 45%;
+    top: 79%;
+    transform: translate(-50%, -50%);
+}
+
+.section-background .square {
+    position: absolute;
+    left: 77%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+}
+
+.client {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.client img {
+    width: 100%;
+}
+
+.client-info h4 {
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 0.3rem;
+    font-size: 1.05rem;
+}
+
+.client-info h5 {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.client-info h5 a {
+    color: var(--main-color-1);
+}
+
+
+/* ----- Contact Section Styling------ */
+
+.contact .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.mail {
+    color: var(--main-color-1);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.mail i {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-left: 2px;
+    transform: translateY(3px);
+    transition: 0.3s margin-left;
+}
+
+.mail:hover {
+    color: var(--main-color-dark-1);
+}
+
+.mail:hover i {
+    margin-left: 10px;
+}
+
+
+/* input */
+
+.contact-form {
+    background-color: var(--bg--color-2);
+    border-radius: 20px;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form h3 {
+    color: var(--heading-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 0.9;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 190px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: var(--main-color-1);
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: var(--main-color-1);
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    color: var(--text-color);
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+    color: var(--main-color-1);
+    transform: translateY(-30px);
+}
+
+textarea {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    background: var(--bg--color-3);
+    border: 2px solid var(--bg--color-3);
+    width: 100%;
+    border-radius: 17px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--heading-color);
+    outline: none;
+    padding: 15px 0;
+    resize: none;
+    min-height: 170px;
+}
+
+textarea::placeholder {
+    color: var(--text-color);
 }
