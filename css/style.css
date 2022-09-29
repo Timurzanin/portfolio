@@ -1605,3 +1605,24 @@
     i {
         color: var(--text-color);
     }
+
+    
+    @media (min-width: 1100px) {
+        section {
+            display: block;
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+        }
+    }
+    /* Show only on touchscreen devices */
+    
+    @media (pointer: coarse) {
+        .btn-group,
+        #VR {
+            visibility: visible;
+        }
+        .hide {
+            visibility: hidden;
+        }
+    }
