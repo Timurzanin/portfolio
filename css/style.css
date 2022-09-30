@@ -1612,8 +1612,8 @@
         section {
             display: block;
             position: absolute;
-            bottom: 50px;
-            left: 50px;
+/*             bottom: 50px;
+            left: 50px; */
         }
     }
     /* Show only on touchscreen devices */
