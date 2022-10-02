@@ -30,7 +30,7 @@
     /* heading-color is the color of the text and heading-color is the color of the background*/
     --text-color: hsl(var(--hue-1), 17%, 63%);
     /* text-color is the color of the text and text-color is the color of the background*/
-    --section-padding: 7rem;
+    --section-padding: 9rem;
     /*section-padding is the padding of the section*/
 }
 
@@ -1479,7 +1479,7 @@ textarea::placeholder {
     width: 200px;
     position: absolute;
     left: 15%;
-    bottom: -190px;
+    bottom: -292px;
     transform: translate(-50%, -50%);
 }
 
@@ -1832,19 +1832,65 @@ i {
 }
 
 iframe {
-    /* background-color: var(--bg--color-2); */
-    /* padding: 3rem 2rem; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
-    /* justify-content: space-between; */
-    /* min-height: 300px; */
-    /* left: 5%; */
-    /* top: 0%; */
     position: absolute;
     width: 200px;
     height: 200px;
-    /* background: rgb(223, 225, 235); */
     border-radius: 50px;
-    /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+}
+
+
+/* thanks */
+
+.thankyou_message {
+    display: none;
+}
+
+.thanks {
+    top: 50px;
+    left: 60px;
+    text-align: center;
+    font-size: 5vw;
+    position: relative;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    color: transparent;
+}
+
+.thanks:before {
+    outline: none;
+}
+
+.thanks::before,
+.thanks::after {
+    content: attr(data-heading);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* // Clip path to slice the text. */
+
+.thanks::before {
+    color: var(--heading-color);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 0 60%)
+}
+
+.thanks::after {
+    color: var(--text-color);
+    clip-path: polygon(0 0, 100% 0%, 100% 36%, 0 56%);
+    animation: slide 5s infinite;
+}
+
+
+/* // Move it. */
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translate(-20px, 2%);
+    }
 }
