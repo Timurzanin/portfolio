@@ -8,8 +8,6 @@
  :root {
     --hue-1: 257;
     --hue-2: 47;
-    --bg--color: hsl(var(--hue-1), 100%, 97%);
-    /*hsl is a function that takes 3 parameters (hue, saturation, lightness) var is  a variable that is used to store a value hue is the color of the background and saturation is the amount of color and lightness is the amount of lightness*/
     --main-color-1: hsl(var(--hue-1), 100%, 60%);
     /*  main-color-1 is the color of the text and main-color-2 is the color of the background*/
     --main-color-dark-1: hsl(var(--hue-1), 76%, 30%);
@@ -18,6 +16,13 @@
     /*main-color-2 is the color of the text and main-color-2 is the color of the background*/
     --main--color-2-dark-2: hsl(var(--hue-2), 82%, 55%);
     /* main-color-2-dark-2 is the color of the text and main-color-2-dark-2 is the color of the background*/
+    --section-padding: 9rem;
+    /*section-padding is the padding of the section*/
+}
+
+body {
+    --bg--color: hsl(var(--hue-1), 100%, 97%);
+    /*hsl is a function that takes 3 parameters (hue, saturation, lightness) var is  a variable that is used to store a value hue is the color of the background and saturation is the amount of color and lightness is the amount of lightness*/
     --bg--color-1: hsl(var(--hue-1), 100%, 97%);
     /* bg-color-1 is the color of the text and bg-color-1 is the color of the background*/
     --bg--color-2: #fff;
@@ -30,8 +35,162 @@
     /* heading-color is the color of the text and heading-color is the color of the background*/
     --text-color: hsl(var(--hue-1), 17%, 63%);
     /* text-color is the color of the text and text-color is the color of the background*/
-    --section-padding: 9rem;
-    /*section-padding is the padding of the section*/
+}
+
+body.dark {
+    /* --bg--color: hsl(var(--hue-1), 5%, 1%);cernii */
+    --bg--color: hsl(var(--hue-1), 15%, 19%);
+    --bg--color-1: hsl(var(--hue-1), 21%, 11%);
+    --bg--color-2: hsl(var(--hue-1), 23%, 19%);
+    --bg--color-3: hsl(var(--hue-1), 23%, 24%);
+    --bg--color-transparent: hsl(var(--hue-1), 23%, 19%, 0.6);
+    --heading-color: hsl(var(--hue-1), 100%, 100%);
+    --text-color: hsl(var(--hue-1), 14%, 51%);
+}
+
+body.dark .st1 {
+    fill: hsl(var(--hue-1), 1%, 1%);
+}
+
+
+/* body.dark .shape.square {
+    opacity: 0.07;
+} */
+
+body.dark .toggle-btn {
+    background-color: var(--bg--color-3);
+}
+
+body.dark .toggle-btn:hover {
+    background-color: brightness(110%);
+    /* //is transparent; */
+}
+
+body.dark .about-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s transform;
+    width: 100%;
+    height: 100%;
+    background: var(--text-color);
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+body.dark .srv-card h3 {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+body.dark .form-input:hover {
+    filter: brightness(110%);
+}
+
+body.dark button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+body.dark button.learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+body.dark button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: var(--heading-color);
+    border-radius: 1.625rem;
+}
+
+body.dark button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgb(17, 17, 17);
+    ;
+}
+
+body.dark button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+}
+
+body.dark button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid rgb(0, 0, 0);
+    border-right: 0.125rem solid rgb(0, 0, 0);
+    transform: rotate(45deg);
+}
+
+body.dark button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: var(--main-color-1);
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body.dark button:hover .circle {
+    width: 100%;
+}
+
+body.dark button:hover .circle .icon.arrow {
+    background: rgb(0, 0, 0);
+    transform: translate(1rem, 0);
+}
+
+body.dark button:hover .button-text {
+    color: var(--text-color);
+}
+
+body.dark .visitor {
+    margin: auto;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-color);
+}
+
+body.dark .visitor-p {
+    padding-left: 44px;
+    padding-top: 18px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--text-color);
 }
 
 
@@ -53,6 +212,7 @@ body {
     overflow-x: hidden;
     background-color: var(--bg--color);
     font-family: "Poppins", sans-serif;
+    transition: 0.8s background-color;
 }
 
 body.stopScroll {
@@ -114,6 +274,7 @@ ul {
     border-left: 3px solid red;
     padding: 0.13rem 0.75rem;
     margin-bottom: 1rem;
+    transition: 0.8s color;
 }
 
 .heading {
@@ -122,6 +283,7 @@ ul {
     font-family: "Abril Fatface", cursive;
     font-weight: 400;
     line-height: 1.3;
+    transition: 0.8s color;
 }
 
 .text {
@@ -131,6 +293,7 @@ ul {
     line-height: 1.5;
     margin: 2rem 0;
     line-height: 2.3;
+    transition: 0.8s color;
 }
 
 .section {
@@ -200,7 +363,7 @@ ul {
     background: -webkit-gradient (linear, right top, left top, from(rgba(8, 8, 43, 0)), to(#2626d9));
     background: linear-gradient(to left, rgb(186, 186, 253), rgb(186, 186, 253));
     -webkit-animation: 2s animateTop linear infinite;
-    animation: 2s animateTop linear infinite;
+    animation: 20s animateTop linear infinite;
 }
 
 @keyframes animateTop {
@@ -222,7 +385,7 @@ ul {
     background: -webkit-gradient (linear, left bottom, left top, from(rgba(8, 8, 43, 0)), to(#2626d9));
     background: linear-gradient(to top, rgb(186, 186, 253), rgb(186, 186, 253));
     -webkit-animation: 2s animateRight linear -1s infinite;
-    animation: 2s animateRight linear -1s infinite;
+    animation: 20s animateRight linear -1s infinite;
 }
 
 @keyframes animateRight {
@@ -244,7 +407,7 @@ ul {
     background: -webkit-gradient (linear, left top, right top, from(rgba(8, 8, 43, 0)), to(#2626d9));
     background: linear-gradient(to right, rgba(8, 8, 43, 0), #2626d9);
     -webkit-animation: 2s animateBottom linear infinite;
-    animation: 2s animateBottom linear infinite;
+    animation: 20s animateBottom linear infinite;
 }
 
 @keyframes animateBottom {
@@ -266,7 +429,7 @@ ul {
     background: -webkit-gradient (linear, left top, left bottom, from(rgba(8, 8, 43, 0)), to(#2626d9));
     background: linear-gradient(to bottom, rgba(8, 8, 43, 0), #2626d9);
     -webkit-animation: 2s animateLeft linear -1s infinite;
-    animation: 2s animateLeft linear -1s infinite;
+    animation: 20s animateLeft linear -1s infinite;
 }
 
 @keyframes animateLeft {
@@ -535,6 +698,7 @@ header.scrolled .logo {
     background: rgb(223, 225, 235);
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: 0.8s color;
 }
 
 .about-card:nth-child(1) {
@@ -597,7 +761,7 @@ header.scrolled .logo {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 15px solid rgb(52, 38, 120);
+    border: 15px solid var(--text-color);
     z-index: -1;
     opacity: 0.07;
 }
@@ -748,62 +912,6 @@ align-items: center;
 /*------ mouse-scroller------- */
 
 
-/* .body1,
-.html1 {
-background-color: #000;
-width: 100%;
-min-height: 100%;
-padding: 0;
-margin: 0;
-} */
-
-.scroll-downs {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 34px;
-    height: 55px;
-}
-
-.mousey {
-    width: 3px;
-    padding: 10px 15px;
-    height: 35px;
-    border: 2px solid rgb(74, 72, 72);
-    border-radius: 25px;
-    opacity: 0.75;
-    box-sizing: content-box;
-}
-
-.scroller {
-    width: 3px;
-    height: 10px;
-    border-radius: 25%;
-    background-color: rgb(78, 76, 76);
-    animation-name: scroll;
-    animation-duration: 2.2s;
-    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
-    animation-iteration-count: infinite;
-}
-
-@keyframes scroll {
-    0% {
-        opacity: 0;
-    }
-    10% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(15px);
-        opacity: 0;
-    }
-}
-
-
 /*------------- Services Section Styling------*/
 
 .services .container {
@@ -866,6 +974,21 @@ margin: 0;
 .srv-card .text {
     margin: 0.7rem 0;
     font-size: 13px;
+}
+
+.visitor {
+    margin: auto;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--heading-color);
+}
+
+.visitor-p {
+    padding-left: 44px;
+    padding-top: 18px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--heading-color);
 }
 
 .srv-card:nth-child(2) {
@@ -1313,7 +1436,7 @@ object-fit: cover; */
     height: 200px;
     bottom: 28px;
     right: 314px;
-    top: -1350px;
+    top: -350px;
 }
 
 .section-background .circle {
@@ -1416,42 +1539,39 @@ object-fit: cover; */
     width: 190px;
 }
 
-.form-control input {
+.input {
+    width: 300px;
+    height: 50px;
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: var(--text-color);
+    padding: .2rem 0;
+    outline: none;
     background-color: transparent;
-    border: 0;
-    border-bottom: 2px #fff solid;
-    display: block;
-    width: 100%;
-    padding: 15px 0;
-    font-size: 18px;
-    color: var(--main-color-1);
+    color: var(--heading-color);
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: 900;
 }
 
-.form-control input:focus,
-.form-control input:valid {
-    outline: 0;
-    border-bottom-color: var(--main-color-1);
+.input:focus,
+input:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: var(--heading-color);
 }
 
-.form-control label {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    pointer-events: none;
+.input::placeholder {
+    color: #777;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
-.form-control label span {
-    display: inline-block;
-    font-size: 18px;
-    min-width: 5px;
-    color: var(--text-color);
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.form-control input:focus+label span,
-.form-control input:valid+label span {
-    color: var(--main-color-1);
-    transform: translateY(-30px);
+.input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
 }
 
 textarea {
@@ -1463,7 +1583,7 @@ textarea {
     border-radius: 17px;
     font-family: inherit;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 900;
     color: var(--heading-color);
     outline: none;
     padding: 15px 0;
@@ -1893,4 +2013,18 @@ iframe {
     50% {
         transform: translate(-20px, 2%);
     }
+}
+
+
+/* count */
+
+h2 {
+    font-size: 50px;
+    margin: 0;
+}
+
+p {
+    color: rbga(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    margin: 0;
 }
