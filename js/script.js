@@ -14,8 +14,12 @@ const images = document.querySelectorAll('.images img');
 const prev_btn = document.querySelector('.prev-btn');
 const next_btn = document.querySelector('.next-btn');
 
+const links = document.querySelectorAll('.nav-links');
+
+const toogle_btn = document.querySelector('.toggle-btn');
 
 window.addEventListener('scroll', () => {
+    activeLink();
     if (!skillsPlayed) skillsCounter();
     if (!mlPlayed) mlCounter()
 });
@@ -724,7 +728,7 @@ const swiper = new Swiper('.swiper', {
 
 
 
-//
+//clock
 
 const secondHand = document.querySelector('.second-hand');
 const minsHand = document.querySelector('.min-hand');
@@ -749,3 +753,140 @@ function setDate() {
 setInterval(setDate, 1000);
 
 setDate();
+
+
+//----------------Change Active link On Scroll-------//
+
+
+function activeLink() {
+    // console.log('activeLink')
+    let sections = document.querySelectorAll('section[id]');
+    // console.log(Array.from(sections))
+    let passedSections = Array.from(sections).map((sct, i) => {
+        return {
+            y: sct.getBoundingClientRect().top - header.offsetHeight,
+            id: i
+        } //is the top of the section is in the viewport
+
+    }).filter(sct => sct.y <= 0);
+    // console.log(currSectionID)
+    let currSectionID = passedSections.at(-1).id; //get the last section that is in the viewport
+    // console.log(currSectionID)
+    links.forEach((l) => l.classList.remove('active'));
+    links[currSectionID].classList.add('active');
+
+}
+
+activeLink();
+
+// visits locas storage
+
+const counter = document.getElementById("count");
+
+incrementVisitsCount();
+
+function incrementVisitsCount() {
+    let visits;
+
+    if (!localStorage.getItem("visits")) localStorage.setItem("visits", 1);
+    else {
+        visits = +localStorage.getItem("visits");
+        const incrementedCount = visits + 1;
+
+        localStorage.setItem("visits", incrementedCount);
+    }
+
+    counter.innerText = localStorage.getItem("visits");
+}
+
+
+// visit Cookies
+// function nameDefined(ckie, nme) {
+//     var splitValues
+//     var i
+//     for (i = 0; i < ckie.length; ++i) {
+//         splitValues = ckie[i].split("=")
+//         if (splitValues[0] == nme) return true
+//     }
+//     return false
+// }
+
+// function delBlanks(strng) {
+//     var result = ""
+//     var i
+//     var chrn
+//     for (i = 0; i < strng.length; ++i) {
+//         chrn = strng.charAt(i)
+//         if (chrn != " ") result += chrn
+//     }
+//     return result
+// }
+
+// function getCookieValue(ckie, nme) {
+//     var splitValues
+//     var i
+//     for (i = 0; i < ckie.length; ++i) {
+//         splitValues = ckie[i].split("=")
+//         if (splitValues[0] == nme) return splitValues[1]
+//     }
+//     return ""
+// }
+
+// function insertCounter() {
+//     readCookie()
+//     displayCounter()
+// }
+
+// function displayCounter() {
+//     document.write('<p class="text"  ALIGN="CENTER"  >')
+//     document.write("You've visited this page ")
+//     if (counters == 1) document.write("the first time.")
+//     else document.write(counters + " times.")
+//     document.writeln('</p>')
+// }
+
+// function readCookie() {
+//     var cookie = document.cookie
+//     counters = 0
+//     var chkdCookie = delBlanks(cookie) //are on the client computer
+//     var nvpair = chkdCookie.split(";")
+//     if (nameDefined(nvpair, "pageCount"))
+//         counters = parseInt(getCookieValue(nvpair, "pageCount"))
+//         ++counters
+//     var futdate = new Date()
+//     var expdate = futdate.getTime()
+//     expdate += 3600000 * 24 * 30 //expires in 1 hour
+//     futdate.setTime(expdate)
+
+//     var newCookie = "pageCount=" + counters
+//     newCookie += "; expires=" + futdate.toGMTString()
+//     window.document.cookie = newCookie
+// }
+// insertCounter();
+
+
+
+
+// ----------------Change Page Theme-----------------//
+
+let firstTheme = localStorage.getItem("dark");
+
+// console.log(+firstThem);
+
+changeTheme(+firstTheme);
+
+function changeTheme(isDark) {
+    if (isDark) {
+        document.body.classList.add("dark");
+        toogle_btn.classList.replace("uil-moon", "uil-sun")
+        localStorage.setItem("dark", 1)
+    } else {
+        document.body.classList.remove("dark");
+        toogle_btn.classList.replace("uil-sun", "uil-moon")
+        localStorage.setItem("dark", 0)
+    }
+}
+
+toogle_btn.addEventListener('click', () => {
+    changeTheme(!document.body.classList.contains("dark"));
+})
