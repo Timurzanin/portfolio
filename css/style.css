@@ -2195,6 +2195,7 @@ p {
     } */
     .triangle {
         width: 75px;
+        margin-top: 50px;
     }
     .dots {
         padding-left: 4%;
