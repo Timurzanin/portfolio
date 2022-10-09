@@ -783,88 +783,88 @@ activeLink();
 
 // visits locas storage
 
-const counter = document.getElementById("count");
+// const counter = document.getElementById("count");
 
-incrementVisitsCount();
+// incrementVisitsCount();
 
-function incrementVisitsCount() {
-    let visits;
+// function incrementVisitsCount() {
+//     let visits;
 
-    if (!localStorage.getItem("visits")) localStorage.setItem("visits", 1);
-    else {
-        visits = +localStorage.getItem("visits");
-        const incrementedCount = visits + 1;
+//     if (!localStorage.getItem("visits")) localStorage.setItem("visits", 1);
+//     else {
+//         visits = +localStorage.getItem("visits");
+//         const incrementedCount = visits + 1;
 
-        localStorage.setItem("visits", incrementedCount);
-    }
+//         localStorage.setItem("visits", incrementedCount);
+//     }
 
-    counter.innerText = localStorage.getItem("visits");
-}
+//     counter.innerText = localStorage.getItem("visits");
+// }
 
 
 // visit Cookies
-// function nameDefined(ckie, nme) {
-//     var splitValues
-//     var i
-//     for (i = 0; i < ckie.length; ++i) {
-//         splitValues = ckie[i].split("=")
-//         if (splitValues[0] == nme) return true
-//     }
-//     return false
-// }
+function nameDefined(ckie, nme) {
+    var splitValues
+    var i
+    for (i = 0; i < ckie.length; ++i) {
+        splitValues = ckie[i].split("=")
+        if (splitValues[0] == nme) return true
+    }
+    return false
+}
 
-// function delBlanks(strng) {
-//     var result = ""
-//     var i
-//     var chrn
-//     for (i = 0; i < strng.length; ++i) {
-//         chrn = strng.charAt(i)
-//         if (chrn != " ") result += chrn
-//     }
-//     return result
-// }
+function delBlanks(strng) {
+    var result = ""
+    var i
+    var chrn
+    for (i = 0; i < strng.length; ++i) {
+        chrn = strng.charAt(i)
+        if (chrn != " ") result += chrn
+    }
+    return result
+}
 
-// function getCookieValue(ckie, nme) {
-//     var splitValues
-//     var i
-//     for (i = 0; i < ckie.length; ++i) {
-//         splitValues = ckie[i].split("=")
-//         if (splitValues[0] == nme) return splitValues[1]
-//     }
-//     return ""
-// }
+function getCookieValue(ckie, nme) {
+    var splitValues
+    var i
+    for (i = 0; i < ckie.length; ++i) {
+        splitValues = ckie[i].split("=")
+        if (splitValues[0] == nme) return splitValues[1]
+    }
+    return ""
+}
 
-// function insertCounter() {
-//     readCookie()
-//     displayCounter()
-// }
+function insertCounter() {
+    readCookie()
+    displayCounter()
+}
 
-// function displayCounter() {
-//     document.write('<p class="text"  ALIGN="CENTER"  >')
-//     document.write("You've visited this page ")
-//     if (counters == 1) document.write("the first time.")
-//     else document.write(counters + " times.")
-//     document.writeln('</p>')
-// }
+function displayCounter() {
+    document.write('<p class="heading " ALIGN="CENTER"  >')
+    document.write("This page was viewed ")
+    if (counterPage == 1) document.write("the first time.")
+    else document.write(counterPage + " times.")
+    document.writeln('</p>')
+}
 
-// function readCookie() {
-//     var cookie = document.cookie
-//     counters = 0
-//     var chkdCookie = delBlanks(cookie) //are on the client computer
-//     var nvpair = chkdCookie.split(";")
-//     if (nameDefined(nvpair, "pageCount"))
-//         counters = parseInt(getCookieValue(nvpair, "pageCount"))
-//         ++counters
-//     var futdate = new Date()
-//     var expdate = futdate.getTime()
-//     expdate += 3600000 * 24 * 30 //expires in 1 hour
-//     futdate.setTime(expdate)
+function readCookie() {
+    var cookie = document.cookie
+    counterPage = 2543
+    var chkdCookie = delBlanks(cookie) //are on the client computer
+    var nvpair = chkdCookie.split(";")
+    if (nameDefined(nvpair, "pageCount"))
+        counterPage = parseInt(getCookieValue(nvpair, "pageCount"))
+        ++counterPage
+    var futdate = new Date()
+    var expdate = futdate.getTime()
+    expdate += 3600000 * 24 * 30 //expires in 1 hour
+    futdate.setTime(expdate)
 
-//     var newCookie = "pageCount=" + counters
-//     newCookie += "; expires=" + futdate.toGMTString()
-//     window.document.cookie = newCookie
-// }
-// insertCounter();
+    var newCookie = "pageCount=" + counterPage
+    newCookie += "; expires=" + futdate.toGMTString()
+    window.document.cookie = newCookie
+}
+insertCounter();
 
 
 
