@@ -2014,20 +2014,20 @@ i {
 
 .phone {
     position: relative;
-    width: 319px;
-    height: 300px;
+    width: 180px;
+    height: 180px;
     border-radius: 50px;
-    top: -60px;
-    left: -31px;
+    top: 0px;
+    left: 45px;
 }
 
 .boots {
     position: absolute;
-    width: 319px;
-    height: 300px;
+    width: 180px;
+    height: 180px;
     border-radius: 50px;
-    top: 0px;
-    left: 0px;
+    /* top: 0px; */
+    left: 70px;
 }
 
 
@@ -2426,10 +2426,10 @@ p {
         transform: none !important;
     }
     .phone {
-        width: 320px;
+        width: 180px;
     }
     .boots {
-        width: 320px;
+        width: 180px;
     }
     .visitor {
         font-size: 20px;
@@ -2468,7 +2468,7 @@ p {
     }
     .section-background {
         transform: translateX(0);
-        left: 65px;
+        left: 35px;
         top: 10px;
         height: 100%;
         background-image: linear-gradient( 45deg, rgb(186, 186, 253) 17%, hsl(242deg 61% 76%) 11%, hsl(243deg 48% 65%) 22%, hsl(245deg 39% 56%) 33%, hsl(246deg 38% 47%) 44%, hsl(248deg 45% 39%) 56%, rgb(52, 38, 120) 67%, hsl(251deg 62% 24%) 78%, hsl(253deg 72% 18%) 89%, hsl(254deg 83% 12%) 100%);
@@ -2586,12 +2586,14 @@ p {
         margin-top: 1rem;
     }
     .phone {
-        width: 320px;
-        height: 253px;
+        width: 180px;
+        height: 180px;
+        margin-top: -30px;
     }
     .boots {
-        width: 320px;
-        height: 253px;
+        width: 180px;
+        height: 180px;
+        margin-top: -30px;
     }
     .portfolio .slider-wrap {
         width: calc(100% - 2rem);
@@ -2620,7 +2622,7 @@ p {
     }
     .subscription .triangle {
         top: 89%;
-        left: 79%;
+        left: 69%;
     }
     .sub-info {
         display: flex;
@@ -2647,12 +2649,5 @@ p {
         flex-basis: 100%;
         text-align: center;
         margin-top: 1rem;
-    }
-    footer .wrapper {
-        margin-top: 1rem;
-        margin-left: 13%;
-    }
-    footer .logo {
-        margin-left: 40%;
     }
 }
