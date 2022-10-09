@@ -18,6 +18,8 @@ const links = document.querySelectorAll('.nav-links');
 
 const toogle_btn = document.querySelector('.toggle-btn');
 
+const hamburger = document.querySelector(".hamburger"); //selecting the hamburger icon
+
 window.addEventListener('scroll', () => {
     activeLink();
     if (!skillsPlayed) skillsCounter();
@@ -625,12 +627,12 @@ function onDocumentMouseMove(event) {
     if (VR) {
         effect.render(scene, camera);
         controls.update();
-        document.querySelector('.btn-group').classList.add('hide');
+        document.querySelector('.bears').classList.add('hide');
     } else {
         renderer.render(scene, camera);
         camera.position.x += (mouseX - camera.position.x) * .05;
         camera.lookAt(scene.position);
-        document.querySelector('.btn-group').classList.remove('hide');
+        document.querySelector('.bears').classList.remove('hide');
     }
 
     requestAnimationFrame(animate);
@@ -639,7 +641,7 @@ function onDocumentMouseMove(event) {
 
 
 
-//set camera position
+// //set camera position
 camera.position.y = 3;
 camera.position.z = -25;
 camera.position.x = 50;
@@ -657,7 +659,7 @@ let mixer = mixitup('.portfolio-gallery', {
 
 
 
-//----------------Modal Pop Up Animation-------//
+// //----------------Modal Pop Up Animation-------//
 
 let currentIndex = 0;
 
@@ -681,7 +683,7 @@ moda_overlay.addEventListener('click', () => {
 
 prev_btn.addEventListener('click', () => {
     if (currentIndex === 0) {
-        currentIndex = 9
+        currentIndex = 5
     } else {
         currentIndex--
     }
@@ -690,7 +692,7 @@ prev_btn.addEventListener('click', () => {
 });
 
 next_btn.addEventListener('click', () => {
-    if (currentIndex === 9) {
+    if (currentIndex === 5) {
         currentIndex = 0
     } else {
         currentIndex++
@@ -890,3 +892,17 @@ function changeTheme(isDark) {
 toogle_btn.addEventListener('click', () => {
     changeTheme(!document.body.classList.contains("dark"));
 })
+
+
+// ----------------Open & Close Navbar Menu-----------------//
+
+hamburger.addEventListener('click', () => {
+    document.body.classList.toggle("open");
+    document.body.classList.toggle("stopScrolling");
+})
+
+links.forEach(link => link.addEventListener("click", () => {
+    document.body.classList.remove("open");
+    document.body.classList.remove("stopScrolling");
+
+}))
