@@ -124,7 +124,7 @@ let creategrid = () => {
   
         //create individual divs
         let sqr = document.createElement('div');
-        sqr.classList.add('square');
+        sqr.classList.add('square1');
   
         //random 90% chance 
         if (Math.random() > 0.90) 
