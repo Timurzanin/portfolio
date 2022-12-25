@@ -296,6 +296,13 @@ ul {
     line-height: 1.3;
     transition: 0.5s color;
 }
+.VIS{
+    width: 300px;
+    height: 200px;
+   left: 100px;   
+
+   
+}
 
 .text {
     color: var(--text-color);
@@ -2651,3 +2658,56 @@ p {
         margin-top: 1rem;
     }
 }
+
+/* canvas */
+
+  #container {
+    perspective: 1000px;
+  }
+  
+  .gridbox {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto 0;
+    transform-style: preserve-3d;
+    color: rgba(0, 0, 0, 0.5);
+    animation: rotate-box 5s linear infinite;
+  }
+  
+  .square {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    float: left;
+    box-sizing: border-box;
+    letter-spacing: -.15rem;
+  }
+  
+  .popout {
+    background: rgba(255, 255, 255, 0.09);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 1.25rem;
+    text-align: center;
+    transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: none;
+    border: none;
+  }
+  
+  @keyframes rotate-box {
+    0% {
+      -moz-transform: rotateX(70deg) rotateZ(0);
+      -webkit-transform: rotateX(45deg) rotateZ(0);
+      transform: rotateX(45deg) rotateZ(0);
+    }
+    50% {
+      -moz-transform: rotateX(90deg) rotateZ(180deg);
+      -webkit-transform: rotateX(90deg) rotateZ(180deg);
+      transform: rotateX(90deg) rotateZ(180deg);
+    }
+    100% {
+      -moz-transform: rotateX(45deg) rotateZ(360deg);
+      -webkit-transform: rotateX(45deg) rotateZ(360deg);
+      transform: rotateX(45deg) rotateZ(360deg);
+    }
+  }
